@@ -18,8 +18,8 @@ std = ["byteorder/std"]
 alloc = []
 
 [dependencies]
-byteorder = { version = "1", optional = true }
-memchr = "2"
+byteorder = { version = "1", default-features = false, optional = true }
+memchr = { version = "2", default-features = false }
 
 [target.'cfg(unix)'.dependencies]
 libc = "0.2"
