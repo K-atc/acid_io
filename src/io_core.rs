@@ -44,6 +44,7 @@ pub(crate) fn default_read_exact<R: Read + ?Sized>(this: &mut R, mut buf: &mut [
     }
 }
 
+#[allow(missing_docs)]
 pub struct Bytes<R> {
     inner: R,
 }

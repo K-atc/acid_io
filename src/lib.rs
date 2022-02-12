@@ -9,11 +9,11 @@
 #[cfg(all(not(feature = "std"), feature = "byteorder"))]
 pub mod byteorder;
 #[cfg(not(feature = "std"))]
-mod error;
+pub(crate) mod error;
 #[cfg(all(not(feature = "std"), feature = "alloc"))]
-mod io_alloc;
+pub(crate) mod io_alloc;
 #[cfg(not(feature = "std"))]
-mod io_core;
+pub(crate) mod io_core;
 #[cfg(not(feature = "std"))]
 mod io_slice;
 #[cfg(not(feature = "std"))]
@@ -32,7 +32,7 @@ pub use error::{Error, ErrorKind, ErrorTrait, Result};
 #[cfg(all(not(feature = "std"), feature = "alloc"))]
 pub use io_alloc::{BufReader, BufWriter, IntoInnerError, LineWriter, Lines, Split};
 #[cfg(not(feature = "std"))]
-pub use io_core::{BufRead, Cursor, Read, Seek, SeekFrom, Write};
+pub use io_core::{BufRead, Cursor, Read, Seek, SeekFrom, Write, Take, Chain, Bytes};
 #[cfg(not(feature = "std"))]
 pub use io_slice::{IoSlice, IoSliceMut};
 #[cfg(not(feature = "std"))]
